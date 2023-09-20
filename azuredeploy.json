@@ -180,7 +180,7 @@
                                     "Content-Type": "application/json"
                                 },
                                 "method": "GET",
-                                "uri": "[concat('https://', parameters('OktaSubdomain') , '.okta.com/api/v1/users?search=profile.email%20eq%20%22@{concat(replace(encodeUriComponent(items(''For_each_-_Account'')?[''accountName'']),''.'',''%2E''), ''%40'', replace(encodeUriComponent(items(''For_each_-_Account'')?[''upnSuffix'']),''.'',''%2E''))}%22')]"
+                                "uri": "[concat('https://', parameters('OktaSubdomain') , '.okta.com/api/v1/users?search=profile.email%20eq%20%22@{concat(replace(encodeUriComponent(triggerBody()?[''Entity'']?[''properties'']?[''Name'']),''.'',''%2E''), ''%40'', replace(encodeUriComponent(triggerBody()?[''Entity'']?[''properties'']?[''UPNSuffix'']),''.'',''%2E''))}%22')]"
                             },
                             "description": "Matching on Microsoft entity account email = Okta user account email"
                         }
