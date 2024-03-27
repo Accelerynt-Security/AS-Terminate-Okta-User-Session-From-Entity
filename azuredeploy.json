@@ -163,7 +163,7 @@
                                     }
                                 },
                                 "method": "get",
-                                "path": "/secrets/@{encodeURIComponent('AS-Okta-Terminate-User-Sessions-API-Token')}/value"
+                                "path": "[concat('/secrets/@{encodeURIComponent(''', parameters('SecretName'), ''')}/value')]"
                             }
                         },
                         "HTTP_-_Get_Okta_User_Account": {
